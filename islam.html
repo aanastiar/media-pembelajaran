@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Media Pembelajaran - Sejarah Islam (Hijrah)</title>
+  <meta name="description" content="Materi singkat tentang Hijrah Nabi Muhammad SAW dari Mekkah ke Madinah: latar belakang, peristiwa penting, dan kuis interaktif." />
+  <style>
+    :root{
+      --accent:#7c3aed;
+      --bg:#eeb805c5;
+      --card:#dfdfdf;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --radius:10px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter, 'Segoe UI', system-ui, Roboto, Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:920px;margin:18px auto;padding:20px;background:var(--card);min-height:100vh;border-radius:12px;display:flex;flex-direction:column}
+    header{text-align:center}
+    h1{margin:6px 0;font-size:1.6rem}
+    h2{margin:0 0 12px;color:var(--muted)}
+    .nav{display:flex;justify-content:space-between;gap:12px;margin:18px 0}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
+    button[disabled]{opacity:.5;cursor:not-allowed}
+    .content-section{display:none;animation:fadeIn .2s both}
+    .content-section.active{display:block}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    img{max-width:100%;border-radius:8px;margin:14px 0;display:block}
+
+    .timeline{background:#fcfbff;border:1px solid #efe7ff;padding:12px;border-radius:8px;margin:12px 0}
+    ul{padding-left:1.25rem}
+    .quiz-question{margin:12px 0}
+    .quiz-options label{display:block;margin-bottom:8px;cursor:pointer}
+    .result{font-weight:600;text-align:center;margin-top:12px}
+    .result.ok{color:green}
+    .result.warn{color:#b45309}
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+    .footer{color:var(--muted);text-align:center;margin-top:auto;padding-top:16px}
+    @media(max-width:600px){.wrap{padding:14px}}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <h1>Media Pembelajaran</h1>
+      <h2>Sejarah Islam — Hijrah Nabi Muhammad SAW</h2>
+    </header>
+
+    <section id="section1" class="content-section active" tabindex="-1" aria-labelledby="s1">
+      <h3 id="s1">1. Pengantar</h3>
+      <p>Hijrah adalah perpindahan Nabi Muhammad SAW dan para pengikutnya dari Mekkah ke Yatsrib (kini disebut Madinah). Peristiwa ini terjadi pada tahun 622 Masehi dan menandai awal kalender Islam (1 H).</p>
+      <p>Hijrah bukan hanya perjalanan fisik — tetapi juga titik balik pembentukan komunitas Muslim (ummah) yang pertama dengan aturan sosial, politik, dan agama.</p>
+      <img src="sejarah islam jpg/20210809-ilustrasi-hijrah-nabi-muhammad-jadi-penentu-awal-tahun-baru-islam.jpg" alt="Ilustrasi perjalanan Hijrah" loading="lazy">
+    </section>
+
+    <section id="section2" class="content-section" tabindex="-1" aria-labelledby="s2">
+      <h3 id="s2">2. Latar Belakang</h3>
+      <ul>
+        <li>Di Mekkah, kaum Muslimin mengalami penganiayaan, tekanan sosial, dan boikot ekonomi dari sebagian pemimpin Quraisy.</li>
+        <li>Nabi Muhammad menerima undangan dari beberapa pemuka di Yatsrib yang menginginkan pemimpin yang adil untuk menengahi konflik antar-kelompok.</li>
+        <li>Negosiasi dan perjanjian antara Nabi dan sejumlah penduduk Yatsrib mempersiapkan penerimaan Muslim.</li>
+      </ul>
+    </section>
+
+    <section id="section3" class="content-section" tabindex="-1" aria-labelledby="s3">
+      <h3 id="s3">3. Peristiwa Penting pada Hijrah</h3>
+      <div class="timeline" aria-label="Garis waktu singkat Hijrah">
+        <strong>Peristiwa singkat:</strong>
+        <ol>
+          <li>622 M: Nabi Muhammad dan sahabatnya meninggalkan Mekkah secara rahasia untuk menghindari upaya pembunuhan.</li>
+          <li>Pemberhentian di Gua Thur: Nabi dan Abu Bakar bersembunyi selama beberapa hari.</li>
+          <li>Perjalanan menuju Quba: Nabi mendirikan masjid pertama (Masjid Quba) sebagai tempat singgah.</li>
+          <li>Tiba di Yatsrib (Madinah): Nabi diterima hangat, pembentukan perjanjian sosial (Masyarakat Madinah) dan tata pemerintahan awal Islam.</li>
+          <li>Hijrah menandai permulaan penanggalan Hijriyah (1 Muharram, 1 H dimulai pada tahun ini berdasarkan perhitungan).</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="section4" class="content-section" tabindex="-1" aria-labelledby="s4">
+      <h3 id="s4">4. Dampak Hijrah</h3>
+      <ul>
+        <li>Pendirian komunitas Muslim pertama dengan hukum dan struktur sosial baru.</li>
+        <li>Pengakuan politik dan peran Nabi sebagai pemimpin agama dan negara di Madinah.</li>
+        <li>Hijrah menjadi simbol keberanian, pengorbanan, dan perpindahan ke lingkungan yang lebih kondusif untuk beribadah dan berkembang.</li>
+      </ul>
+    </section>
+
+    <section id="section5" class="content-section" tabindex="-1" aria-labelledby="s5">
+      <h3 id="s5">5. Kuis Interaktif</h3>
+      <form id="quizForm" aria-describedby="quizResult">
+        <div class="quiz-question" role="group" aria-labelledby="q1-label">
+          <p id="q1-label"><strong>1. Tahun Hijrah Nabi Muhammad SAW dari Mekkah ke Madinah adalah?</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="0"> 610 M</label>
+            <label><input type="radio" name="q1" value="1"> 622 M</label>
+            <label><input type="radio" name="q1" value="0"> 632 M</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" role="group" aria-labelledby="q2-label">
+          <p id="q2-label"><strong>2. Tempat singgah pertama Nabi setelah meninggalkan Mekkah adalah?</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="1"> Gua Thur</label>
+            <label><input type="radio" name="q2" value="0"> Masjid Quba</label>
+            <label><input type="radio" name="q2" value="0"> Bukit Uhud</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" role="group" aria-labelledby="q3-label">
+          <p id="q3-label"><strong>3. Hijrah menandai awal dari kalender …</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="0"> Masehi</label>
+            <label><input type="radio" name="q3" value="1"> Hijriyah</label>
+            <label><input type="radio" name="q3" value="0"> Julian</label>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="submit">Selesai Kuis</button>
+          <button type="button" id="resetQuiz">Reset</button>
+        </div>
+
+        <div id="quizResult" class="result" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <div class="nav">
+      <button id="prevBtn" type="button" aria-label="Sebelumnya"> Sebelumnya</button>
+      <button id="nextBtn" type="button" aria-label="Berikutnya">Berikutnya</button>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const sections = Array.from(document.querySelectorAll('.content-section'));
+      let current = sections.findIndex(s=>s.classList.contains('active'));
+      if (current === -1) current = 0;
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      function show(i){
+        sections.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+        prevBtn.disabled = i===0;
+        nextBtn.disabled = i===sections.length-1;
+        sections[i].focus();
+      }
+
+      prevBtn.addEventListener('click', ()=>{ if(current>0){ current--; show(current); } });
+      nextBtn.addEventListener('click', ()=>{ if(current<sections.length-1){ current++; show(current); } });
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') nextBtn.click();
+        if(e.key === 'ArrowLeft') prevBtn.click();
+      });
+
+      // Quiz
+      const quizForm = document.getElementById('quizForm');
+      const quizResult = document.getElementById('quizResult');
+      const resetQuiz = document.getElementById('resetQuiz');
+
+      quizForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const radios = Array.from(quizForm.querySelectorAll('input[type="radio"]'));
+        const qnames = Array.from(new Set(radios.map(r=>r.name)));
+        let unanswered = [];
+        let score = 0;
+        qnames.forEach(name=>{
+          const sel = quizForm.querySelector(`input[name="${name}"]:checked`);
+          if(!sel) unanswered.push(name);
+          else score += Number(sel.value);
+        });
+        if(unanswered.length){
+          quizResult.textContent = `Jawab semua soal dulu (belum dijawab: ${unanswered.length}).`;
+          quizResult.classList.remove('ok'); quizResult.classList.add('warn');
+          return;
+        }
+        quizResult.textContent = `Skor Anda: ${score}/${qnames.length}`;
+        quizResult.classList.remove('warn'); quizResult.classList.add('ok');
+      });
+
+      resetQuiz.addEventListener('click', ()=>{ quizForm.reset(); quizResult.textContent=''; });
+
+      // initial show
+      show(current);
+    });
+  </script>
+</body>
+</html>

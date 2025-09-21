@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Media Pembelajaran - PKN</title>
+  <meta name="description" content="Media pembelajaran interaktif PKN: materi singkat, fakta, dan kuis" />
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --accent-dark:#0b8b88;
+      --bg:#ffffff;
+      --card:#fac928;
+      --text:#0f172a;
+      --muted:#ffffff;
+      --radius:10px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font-family:Inter, 'Segoe UI', system-ui, Roboto, Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:920px;margin:18px auto;padding:20px;background:var(--card);min-height:100vh;border-radius:12px;display:flex;flex-direction:column}
+    header{text-align:center}
+    h1{margin:6px 0;font-size:1.6rem}
+    h2{margin:0 0 12px;color:var(--muted)}
+    .nav{display:flex;justify-content:space-between;gap:12px;margin:18px 0}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
+    button[disabled]{opacity:.5;cursor:not-allowed}
+    .content-section{display:none;animation:fadeIn .2s both}
+    .content-section.active{display:block}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    img{max-width:100%;border-radius:8px;margin:14px 0;display:block}
+    ul{padding-left:1.25rem}
+    .quiz-question{margin:12px 0}
+    .quiz-options label{display:block;margin-bottom:8px;cursor:pointer}
+    .result{font-weight:600;text-align:center;margin-top:12px}
+    .result.ok{color:green}
+    .result.warn{color:#b45309}
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+    .footer{color:var(--muted);text-align:center;margin-top:auto;padding-top:16px}
+    @media(max-width:600px){.wrap{padding:14px}}
+  </style>
+</head>
+<body>
+  <main class="wrap" role="main">
+    <header>
+      <h1>Media Pembelajaran</h1>
+      <h2>Pelajaran: PKN (Pendidikan Kewarganegaraan)</h2>
+    </header>
+
+    <!-- Section 1: Pengantar -->
+    <section id="section1" class="content-section active" tabindex="-1" aria-labelledby="s1">
+      <h3 id="s1">1. Pengantar PKN</h3>
+      <p>PKN (Pendidikan Kewarganegaraan) mengajarkan nilai-nilai kebangsaan, hak dan kewajiban warga negara, serta cara berpartisipasi dalam kehidupan bermasyarakat dan bernegara.</p>
+      <p>Di materi singkat ini kita akan membahas:</p>
+      <ul>
+        <li>Pancasila dan maknanya.</li>
+        <li>Lambang negara (Garuda Pancasila) dan arti simbol-simbolnya.</li>
+        <li>Hak &amp; kewajiban sebagai warga negara.</li>
+      </ul>
+      <img src="pkn jpg/garuda2.jpg" style="align-items: center;" alt="Garuda Pancasila - lambang negara" loading="lazy">
+    </section>
+
+    <!-- Section 2: Pancasila -->
+    <section id="section2" class="content-section" tabindex="-1" aria-labelledby="s2">
+      <h3 id="s2">2. Pancasila</h3>
+      <p>Pancasila adalah dasar negara Indonesia yang terdiri dari lima sila:</p>
+      <ol>
+        <li><strong>Ketuhanan Yang Maha Esa</strong></li>
+        <li><strong>Kemanusiaan yang adil dan beradab</strong></li>
+        <li><strong>Persatuan Indonesia</strong></li>
+        <li><strong>Kerakyatan yang dipimpin oleh hikmat kebijaksanaan dalam permusyawaratan/perwakilan</strong></li>
+        <li><strong>Keadilan sosial bagi seluruh rakyat Indonesia</strong></li>
+      </ol>
+      <p>Pancasila dirumuskan pada 1 Juni 1945 dan menjadi dasar negara yang menyatukan beragam suku, agama, dan budaya di Indonesia.</p>
+    </section>
+
+    <!-- Section 3: Lambang & Nilai -->
+    <section id="section3" class="content-section" tabindex="-1" aria-labelledby="s3">
+      <h3 id="s3">3. Lambang Negara & Makna</h3>
+      <p>Garuda Pancasila memiliki beberapa simbol penting yang melambangkan nilai-nilai Pancasila. Contoh:</p>
+      <ul>
+        <li>Perisai di dada Garuda membagi simbol untuk tiap sila.</li>
+        <li>Burung Garuda melambangkan kekuatan dan keberanian.</li>
+        <li>Jumlah bulu pada sayap, ekor, dan leher melambangkan tanggal kemerdekaan (17 Agustus 1945) jika dihitung pada beberapa versi penafsiran.</li>
+      </ul>
+      <img src="pkn jpg/garuda.jpeg" loading="lazy">
+    </section>
+
+    <!-- Section 4: Hak & Kewajiban -->
+    <section id="section4" class="content-section" tabindex="-1" aria-labelledby="s4">
+      <h3 id="s4">4. Hak dan Kewajiban Warga Negara</h3>
+      <p>Contoh hak:</p>
+      <ul>
+        <li>Hak atas pendidikan.</li>
+        <li>Hak atas kebebasan beragama.</li>
+        <li>Hak untuk memilih dalam pemilu (bagi yang memenuhi syarat usia).</li>
+      </ul>
+      <p>Contoh kewajiban:</p>
+      <ul>
+        <li>Mematuhi hukum dan peraturan.</li>
+        <li>Berpartisipasi dalam kehidupan bermasyarakat (mis. memilih).</li>
+        <li>Melindungi persatuan dan kesatuan bangsa.</li>
+      </ul>
+    </section>
+
+    <!-- Section 5: Kuis -->
+    <section id="section5" class="content-section" tabindex="-1" aria-labelledby="s5">
+      <h3 id="s5">5. Kuis Interaktif</h3>
+
+      <form id="quizForm" aria-describedby="quizResult">
+        <div class="quiz-question" role="group" aria-labelledby="q1-label">
+          <p id="q1-label"><strong>1. Dasar negara Indonesia adalah?</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="0"> UUD 1945</label>
+            <label><input type="radio" name="q1" value="1"> Pancasila</label>
+            <label><input type="radio" name="q1" value="0"> Bhinneka Tunggal Ika</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" role="group" aria-labelledby="q2-label">
+          <p id="q2-label"><strong>2. Sila pertama Pancasila berbunyi?</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="1"> Ketuhanan Yang Maha Esa</label>
+            <label><input type="radio" name="q2" value="0"> Persatuan Indonesia</label>
+            <label><input type="radio" name="q2" value="0"> Keadilan sosial</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" role="group" aria-labelledby="q3-label">
+          <p id="q3-label"><strong>3. Contoh kewajiban warga negara adalah?</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="0"> Hanya berpendapat di media sosial</label>
+            <label><input type="radio" name="q3" value="1"> Mematuhi hukum dan peraturan</label>
+            <label><input type="radio" name="q3" value="0"> Bermain game saja</label>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="submit">Selesai Kuis</button>
+          <button type="button" id="resetQuiz">Reset</button>
+        </div>
+
+        <div id="quizResult" class="result" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- Navigation -->
+    <div class="nav">
+      <button id="prevBtn" type="button" aria-label="Sebelumnya">Sebelumnya</button>
+      <button id="nextBtn" type="button" aria-label="Berikutnya">Berikutnya</button>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const sections = Array.from(document.querySelectorAll('.content-section'));
+      let current = sections.findIndex(s=>s.classList.contains('active'));
+      if (current === -1) current = 0;
+
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      function show(i){
+        sections.forEach((s,idx)=> s.classList.toggle('active', idx===i));
+        prevBtn.disabled = i===0;
+        nextBtn.disabled = i===sections.length-1;
+        sections[i].focus();
+      }
+
+      prevBtn.addEventListener('click', ()=>{ if(current>0){ current--; show(current); } });
+      nextBtn.addEventListener('click', ()=>{ if(current<sections.length-1){ current++; show(current); } });
+
+      document.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight') nextBtn.click();
+        if(e.key === 'ArrowLeft') prevBtn.click();
+      });
+
+      // Quiz
+      const quizForm = document.getElementById('quizForm');
+      const quizResult = document.getElementById('quizResult');
+      const resetQuiz = document.getElementById('resetQuiz');
+
+      quizForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const radios = Array.from(quizForm.querySelectorAll('input[type="radio"]'));
+        const qnames = Array.from(new Set(radios.map(r=>r.name)));
+        let unanswered = [];
+        let score = 0;
+        qnames.forEach(name=>{
+          const sel = quizForm.querySelector(`input[name="${name}"]:checked`);
+          if(!sel) unanswered.push(name);
+          else score += Number(sel.value);
+        });
+        if(unanswered.length){
+          quizResult.textContent = `Jawab semua soal dulu (belum dijawab: ${unanswered.length}).`;
+          quizResult.classList.remove('ok'); quizResult.classList.add('warn');
+          return;
+        }
+        quizResult.textContent = `Skor Anda: ${score}/${qnames.length}`;
+        quizResult.classList.remove('warn'); quizResult.classList.add('ok');
+      });
+
+      resetQuiz.addEventListener('click', ()=>{ quizForm.reset(); quizResult.textContent=''; });
+
+      // initial show
+      show(current);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Media Pembelajaran - Matematika Dasar</title>
+  <meta name="description" content="Materi singkat tentang matematika dasar: operasi hitung bilangan, contoh soal, dan kuis interaktif." />
+  <style>
+    :root{
+      --accent:#ec5a16;
+      --bg:#1a74ce;
+      --card:#ffffff;
+      --text:#0f172a;
+      --muted:#eb3a0e;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}
+    .wrap{max-width:920px;margin:20px auto;padding:20px;background:var(--card);border-radius:12px;min-height:100vh;display:flex;flex-direction:column}
+    header{text-align:center}
+    h1{margin:6px 0;font-size:1.6rem}
+    h2{margin:0 0 12px;color:var(--muted)}
+    .nav{display:flex;justify-content:space-between;margin:18px 0}
+    button{background:var(--accent);color:#fff;border:0;padding:10px 16px;border-radius:8px;cursor:pointer}
+    button[disabled]{opacity:.5;cursor:not-allowed}
+    .content-section{display:none;animation:fadeIn .2s both}
+    .content-section.active{display:block}
+    @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    ul{padding-left:1.25rem}
+    .quiz-question{margin:12px 0}
+    .quiz-options label{display:block;margin-bottom:8px;cursor:pointer}
+    .result{font-weight:600;text-align:center;margin-top:12px}
+    .result.ok{color:green}
+    .result.warn{color:#b45309}
+    .controls{display:flex;gap:10px;justify-content:center;margin-top:12px}
+    .footer{color:var(--muted);text-align:center;margin-top:auto;padding-top:16px}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Media Pembelajaran</h1>
+      <h2>Matematika Dasar</h2>
+    </header>
+
+    <!-- Pengantar -->
+    <section id="section1" class="content-section active">
+      <h3>1. Pengantar</h3>
+      <p>Matematika dasar sederhana:</p>
+      <ul>
+        <li><b>Penjumlahan (+)</b></li>
+        <li><b>Pengurangan (−)</b></li>
+        <li><b>Perkalian (×)</b></li>
+        <li><b>Pembagian (÷)</b></li>
+      </ul>
+    </section>
+
+    <!-- Contoh Soal -->
+    <section id="section2" class="content-section">
+      <h3>2. Contoh Soal</h3>
+      <ul>
+        <li>8 + 5 = 13</li>
+        <li>12 − 7 = 5</li>
+        <li>6 × 3 = 18</li>
+        <li>20 ÷ 4 = 5</li>
+      </ul>
+    </section>
+
+    <!-- Kuis -->
+    <section id="section3" class="content-section">
+      <h3>3. Kuis Interaktif</h3>
+      <form id="quizForm">
+        <div class="quiz-question">
+          <p><strong>1. Hasil dari 15 − 9 = …</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="0"> 9</label>
+            <label><input type="radio" name="q1" value="1"> 6</label>
+            <label><input type="radio" name="q1" value="0"> 5</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p><strong>2. Hasil dari 7 × 4 = …</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="0"> 21</label>
+            <label><input type="radio" name="q2" value="1"> 28</label>
+            <label><input type="radio" name="q2" value="0"> 24</label>
+          </div>
+        </div>
+
+        <div class="quiz-question">
+          <p><strong>3. Hasil dari 36 ÷ 6 = …</strong></p>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="0"> 5</label>
+            <label><input type="radio" name="q3" value="0"> 8</label>
+            <label><input type="radio" name="q3" value="1"> 6</label>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button type="submit">Selesai Kuis</button>
+          <button type="button" id="resetQuiz">Reset</button>
+        </div>
+
+        <div id="quizResult" class="result"></div>
+      </form>
+    </section>
+
+    <div class="nav">
+      <button id="prevBtn" type="button">Sebelumnya</button>
+      <button id="nextBtn" type="button">Berikutnya</button>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const sections = Array.from(document.querySelectorAll('.content-section'));
+      let current = 0;
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      function show(i){
+        sections.forEach((s,idx)=>s.classList.toggle('active',idx===i));
+        prevBtn.disabled = i===0;
+        nextBtn.disabled = i===sections.length-1;
+      }
+
+      prevBtn.addEventListener('click',()=>{ if(current>0){current--;show(current);} });
+      nextBtn.addEventListener('click',()=>{ if(current<sections.length-1){current++;show(current);} });
+
+      // kuis
+      const quizForm = document.getElementById('quizForm');
+      const quizResult = document.getElementById('quizResult');
+      const resetQuiz = document.getElementById('resetQuiz');
+
+      quizForm.addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const radios = Array.from(quizForm.querySelectorAll('input[type="radio"]'));
+        const qnames = Array.from(new Set(radios.map(r=>r.name)));
+        let score=0, answered=0;
+        qnames.forEach(name=>{
+          const sel=quizForm.querySelector(`input[name="${name}"]:checked`);
+          if(sel){answered++; score+=Number(sel.value);}
+        });
+        if(answered<qnames.length){
+          quizResult.textContent="Jawab semua soal dulu!";
+          quizResult.className="result warn";
+          return;
+        }
+        quizResult.textContent=`Skor Anda: ${score}/${qnames.length}`;
+        quizResult.className="result ok";
+      });
+
+      resetQuiz.addEventListener('click',()=>{
+        quizForm.reset();
+        quizResult.textContent="";
+      });
+
+      show(current);
+    });
+  </script>
+</body>
+</html>
